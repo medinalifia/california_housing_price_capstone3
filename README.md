@@ -53,15 +53,16 @@ Column	Type	Description:
 **median_house_value**	float	Target: Median house value (USD)
 
 3. Methodology
-1. Data Preprocessing
+    1. Data Preprocessing
 Handle missing values in total_bedrooms with mean imputation
 Detect and remove duplicates
 Outlier analysis using IQR
 Encoding ocean_proximity with Label Encoding
-2. Feature Engineering
+    2. Feature Engineering
 Drop original features to avoid multicollinearity
-3. Modeling
-6 algorithms tested:
+
+    3. Modeling
+**6 algorithms tested:**
 - Linear Regression
 - K-Neighbors Regressor
 - Decision Tree Regressor
@@ -70,11 +71,12 @@ Drop original features to avoid multicollinearity
 - LightGBM Regressor
 
 4. Model Evaluation
+
 **RMSE (Root Mean Squared Error)**
 **MAE (Mean Absolute Error)**
 **MAPE (Mean Absolute Percentage Error)**
 **R² Score**
 
-5. Hyperparameter Tuning
+6. Hyperparameter Tuning
 GridSearchCV on LightGBM with 5-fold cross-validation.
 
