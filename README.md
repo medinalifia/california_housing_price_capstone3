@@ -23,7 +23,9 @@ Project Goals
 - Provide data-driven business insights for decision making
 
 📊 Dataset
+
 **Data Source**
+
 Name: California Housing Dataset (1990)
 Number of rows: 14,448
 Number of features: 10 (9 features + 1 target)
