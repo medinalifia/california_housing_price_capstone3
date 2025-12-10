@@ -1,141 +1,68 @@
-# California_housing_price_capstone3
-
-A comprehensive machine learning project for predicting median house values in California using advanced regression techniques and feature engineering.
-
-📋 Table of Contents
-Project Overview
-
-Business Problem
-
-Dataset
-
-Methodology
-
-Installation
-
-Usage
-
-Results
-
-Model Performance
-
-Key Findings
-
-Project Structure
-
-Limitations
-
-Future Improvements
-
-🎯 Project Overview
-This project implements a complete machine learning pipeline to predict median house prices in California districts based on the 1990 census data. The solution addresses challenges, including feature engineering, handling missing values, and model optimization to provide accurate housing price predictions.
+**California Housing Price Prediction: Capstone Project 3**
+This project aims to build a machine learning model that can predict median house prices in California based on 1990 census data. The model is developed using an end-to-end approach: from data exploration, feature engineering, model training, to evaluation and model storage for production.
 
 Key Features:
 
-Comprehensive EDA with geographical visualizations
+- Comprehensive EDA with geographical visualizations
+- Feature engineering to reduce multicollinearity
+- Testing of 6 different regression algorithms
+- Hyperparameter tuning with GridSearchCV
+- Comprehensive evaluation with residual analysis
 
-Advanced feature engineering to reduce multicollinearity
+Model saved in .pkl format for deployment
 
-Multiple regression models comparison (6 algorithms)
-
-Hyperparameter tuning with GridSearchCV
-
-Complete model evaluation with residual analysis
-
-Production-ready model serialization
-
-📊 Business Problem Understanding
-Context
-The dataset contains housing census data from California in 1990. This is a popular geographical regression dataset used to test machine learning algorithms. Each row represents one block group in California. The main objective is to predict median house value (median_house_value) in each block based on geographical and demographic features.
-
-Problem Statement
-Property valuation is a complex problem influenced by multiple factors like location, house age, room count, and resident income. For investors, property developers, or local governments, having accurate house price prediction tools is crucial for:
-
-Investment decisions: Identifying areas where property values are likely to increase
-
-Fair property valuation: Ensuring sale/purchase prices align with market values
-
-Urban planning: Understanding relationships between demographic/geographical factors and property values
-
-Market trend analysis: Estimating potential property value increases/decreases
-
+🎯 Business Problem
+**Background**
+1990 California housing census data is used to test the model's ability to predict median_house_value. Each row represents one block group. Accurate house price prediction is crucial for:
+- Real Estate Agents
+- Government
 Project Goals
-Develop a regression model to predict median_house_value
+- Build a regression model to predict median_house_value
+- Identify the most influential features on house prices
+- Provide data-driven business insights for decision making
 
-Identify the most influential features (location, income, ocean proximity)
+📊 Dataset
+**Data Source**
+Name: California Housing Dataset (1990)
+Number of rows: 14,448
+Number of features: 10 (9 features + 1 target)
 
-Provide business insights for stakeholders regarding property planning and investment
+**Variables**
+Column	Type	Description
+**longitude** float	Longitude position (decreases westward)
+**latitude**	float	Latitude position (increases northward)
+**housing_median_age**	float	Median age of houses in the block
+**total_rooms**	float	Total rooms in block
+**total_bedrooms**	float	Total bedrooms (has missing values)
+**population**	float	Population in block
+**households**	float	Number of households
+**median_income**	float	Median income (in tens of thousands USD)
+**ocean_proximity**	object	Proximity to ocean category
+**median_house_value**	float	Target: Median house value (USD)
 
-📁 Dataset
-The project uses the California Housing Dataset, containing information from the 1990 California census.
-
-Features:
-longitude: Geographical position (westward decreasing)
-
-latitude: Geographical position (northward increasing)
-
-housing_median_age: Median age of houses in the block
-
-total_rooms: Total number of rooms in block
-
-total_bedrooms: Total number of bedrooms in block
-
-population: Total population in block
-
-households: Total number of households
-
-median_income: Median household income (tens of thousands of USD)
-
-ocean_proximity: Proximity to ocean (categorical)
-
-Target:
-median_house_value: Median house value for California districts (USD)
-
-🛠️ Methodology
+🔧 Methodology
 1. Data Preprocessing
-Missing value handling for total_bedrooms
-
-Duplicate detection and removal
-
-Outlier analysis using IQR method
-
-Exploratory Data Analysis (EDA) with geographical mapping
-
+Handle missing values in total_bedrooms with mean imputation
+Detect and remove duplicates
+Outlier analysis using IQR
+Encoding ocean_proximity with Label Encoding
 2. Feature Engineering
-Created new features:
-
-rooms_per_household: Total rooms ÷ households
-
-bedrooms_per_room: Total bedrooms ÷ total rooms
-
-population_per_household: Population ÷ households
-
-Dropped original correlated features to reduce multicollinearity
-
-Label encoding for categorical features
-
-3. Modeling Approaches
-Tested 6 regression algorithms:
-
-Linear Regression
-
-K-Neighbors Regressor
-
-Decision Tree Regressor
-
-Random Forest Regressor
-
-Support Vector Regressor (SVR)
-
-LightGBM Regressor
+Drop original features to avoid multicollinearity
+3. Modeling
+6 algorithms tested:
+- Linear Regression
+- K-Neighbors Regressor
+- Decision Tree Regressor
+- Random Forest Regressor
+- Support Vector Regressor (SVR)
+- LightGBM Regressor
 
 4. Model Evaluation
-Primary metrics:
+**RMSE (Root Mean Squared Error)**
+**MAE (Mean Absolute Error)**
+**MAPE (Mean Absolute Percentage Error)**
+**R² Score**
 
-RMSE (Root Mean Squared Error): Measures average error magnitude
+5. Hyperparameter Tuning
+GridSearchCV on LightGBM with 5-fold cross-validation.
 
-MAE (Mean Absolute Error): Average absolute difference
-
-MAPE (Mean Absolute Percentage Error): Percentage error
-
-R² Score: Variance explained by the model
