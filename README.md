@@ -2,7 +2,7 @@
 
 This project aims to build a machine learning model that can predict median house prices in California based on 1990 census data. The model is developed using an end-to-end approach: from data exploration, feature engineering, model training, to evaluation and model storage for production.
 
-Key Features:
+1. Key Features:
 
 - Comprehensive EDA with geographical visualizations
 - Feature engineering to reduce multicollinearity
@@ -12,7 +12,7 @@ Key Features:
 
 Model saved in .pkl format for deployment
 
-🎯 Business Problem
+2. Business Problem
 **Background**
 1990 California housing census data is used to test the model's ability to predict median_house_value. Each row represents one block group. Accurate house price prediction is crucial for:
 - Real Estate Agents
@@ -50,7 +50,7 @@ Column	Type	Description:
 
 **median_house_value**	float	Target: Median house value (USD)
 
-🔧 Methodology
+3. Methodology
 1. Data Preprocessing
 Handle missing values in total_bedrooms with mean imputation
 Detect and remove duplicates
