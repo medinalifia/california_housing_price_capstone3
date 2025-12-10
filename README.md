@@ -1,4 +1,5 @@
 **California Housing Price Prediction: Capstone Project 3**
+
 This project aims to build a machine learning model that can predict median house prices in California based on 1990 census data. The model is developed using an end-to-end approach: from data exploration, feature engineering, model training, to evaluation and model storage for production.
 
 Key Features:
@@ -28,16 +29,25 @@ Number of rows: 14,448
 Number of features: 10 (9 features + 1 target)
 
 **Variables**
-Column	Type	Description
+Column	Type	Description:
 **longitude** float	Longitude position (decreases westward)
+
 **latitude**	float	Latitude position (increases northward)
+
 **housing_median_age**	float	Median age of houses in the block
+
 **total_rooms**	float	Total rooms in block
+
 **total_bedrooms**	float	Total bedrooms (has missing values)
+
 **population**	float	Population in block
+
 **households**	float	Number of households
+
 **median_income**	float	Median income (in tens of thousands USD)
+
 **ocean_proximity**	object	Proximity to ocean category
+
 **median_house_value**	float	Target: Median house value (USD)
 
 🔧 Methodology
